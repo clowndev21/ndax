@@ -95,3 +95,8 @@ closed
 'NoneType' object has no attribute 'connected'
 closed
 'NoneType' object has no attribute 'connected'
+closed
+'NoneType' object has no attribute 'connected'
+closed
+'NoneType' object has no attribute 'connected'
+closed
