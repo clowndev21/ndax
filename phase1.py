@@ -31,13 +31,10 @@ try:
         wst.daemon = True
         wst.start()
         conn_timeout = 5
-        print('bbbb')
         while not ws.sock.connected and conn_timeout:
-            print('ccccc')
             sleep(1)
             conn_timeout -= 1
         while ws.sock.connected:
-            print('dddddd')
             for id in Instruments:
                 payload = {"OMSId": 1,
                              "InstrumentId": id}
