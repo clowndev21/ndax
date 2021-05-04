@@ -20,17 +20,15 @@ def on_close(ws):
     f = open("log.txt", "a")
     f.write("closed\n")
     f.close()
-    os.system('python phase1.py')
-
 
 if __name__=='__main__':
-    websocket.enableTrace(False)
-    ws = websocket.WebSocketApp("wss://api.ndax.io/WSGateway/", on_message = on_message, on_close = on_close)
-    wst = threading.Thread(target=ws.run_forever)
-    wst.daemon = True
-    wst.start()
-    conn_timeout = 5
     try:
+        websocket.enableTrace(False)
+        ws = websocket.WebSocketApp("wss://api.ndax.io/WSGateway/", on_message = on_message, on_close = on_close)
+        wst = threading.Thread(target=ws.run_forever)
+        wst.daemon = True
+        wst.start()
+        conn_timeout = 5
         while not ws.sock.connected and conn_timeout:
             sleep(1)
             conn_timeout -= 1
@@ -50,4 +48,4 @@ if __name__=='__main__':
         f = open("log.txt", "a")
         f.write(str(e)+"\n")
         f.close()
-        os.system('python phase1.py')
+os.system('python phase1.py')
