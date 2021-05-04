@@ -18,9 +18,9 @@ def on_message(ws, message):
         print('------------')
 def on_close(ws):
     print ("### closed ###")
-    # f = open("log.txt", "a")
-    # f.write("closed\n")
-    # f.close()
+    f = open("log.txt", "a")
+    f.write("closed\n")
+    f.close()
     os.system('python phase.py')
 
 try:
@@ -50,7 +50,7 @@ try:
                 if id==78:
                     sleep(2)
 except Exception as e:
-    # f = open("log.txt", "a")
-    # f.write(str(e)+"\n")
-    # f.close()
+    f = open("log.txt", "a")
+    f.write(str(e)+"\n")
+    f.close()
     os.system('python phase1.py')
