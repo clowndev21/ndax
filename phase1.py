@@ -16,7 +16,7 @@ def on_message(ws, message):
     if id==78:
         print('------------')
 def on_close(ws):
-    print ("### closed ###")
+    print ("############")
     f = open("log.txt", "a")
     f.write("closed\n")
     f.close()
