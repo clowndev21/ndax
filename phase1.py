@@ -17,7 +17,7 @@ def on_message(ws, message):
     if id==78:
         print('------------')
 def on_close(ws):
-    print ("##### CLOSED #######")
+    print ("######")
 
 if __name__=='__main__':
     try:
@@ -43,5 +43,5 @@ if __name__=='__main__':
                 if id==78:
                     sleep(0.3)
     except Exception as e:
-        print("EXCEPTION: ", str(e))
-os.system('python3 phase1.py')
+        print("EXCEPTION: ")
+os.system('python phase1.py')
