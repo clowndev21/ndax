@@ -5,6 +5,7 @@ from time import sleep
 import json
 
 Instruments={1:'BTCCAD',2:'BCHCAD',3:'ETHCAD',4:'XRPCAD',5:'LTCCAD',74:'BTCUSD',75:'EOSCAD',76:'XLMCAD',77:'DOGECAD',78:'ADACAD'}
+
 def on_message(ws, message):
     price = json.loads(message)
     d = json.loads(price['o'])
@@ -16,10 +17,7 @@ def on_message(ws, message):
     if id==78:
         print('------------')
 def on_close(ws):
-    print ("############")
-    f = open("log.txt", "a")
-    f.write("closed\n")
-    f.close()
+    print ("##### CLOSED #######")
 
 if __name__=='__main__':
     try:
@@ -43,9 +41,7 @@ if __name__=='__main__':
                              }
                 ws.send(json.dumps(message))
                 if id==78:
-                    sleep(1)
+                    sleep(0.3)
     except Exception as e:
-        f = open("log.txt", "a")
-        f.write(str(e)+"\n")
-        f.close()
-os.system('python phase1.py')
+        print("EXCEPTION: ", str(e))
+os.system('python3 phase1.py')
